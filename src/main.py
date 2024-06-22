@@ -22,15 +22,19 @@ F = ["8", "e"]
 # Array of values on display
 NUMBERS = [ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, A, B, C, D, E, F]
 
+# Clear the output file
+with open('log/output.txt', 'w') as file:
+    file.write("")
+
 # Writing displayed values 0-255 (16x16)
 for i in NUMBERS:
     for j in NUMBERS:
         # Writing to the output file
-        with open('output.txt', 'a') as file:
+        with open('log/output.txt', 'a') as file:
             file.write(f"{j[0]}{i[0]}{i[1]}{j[1]} ")
         # Check the values in the terminal
         print(j[0],i[0],i[1],j[1])
 
     # Add enter after 16. no
-    with open('output.txt', 'a') as file:
+    with open('log/output.txt', 'a') as file:
         file.write("\n")
